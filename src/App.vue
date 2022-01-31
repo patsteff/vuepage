@@ -1,6 +1,6 @@
 <template>
   <div id="nav">
-    <Navigation :msg="testMessage" />
+    <Navigation :message="message" />
   </div>
   <router-view />
 </template>
@@ -9,7 +9,12 @@
 import Navigation from './components/Navigation'
 export default {
   name: 'app',
-  components: { Navigation }
+  components: { Navigation },
+  data () {
+    return {
+      message: 'You loaded this page on ' + new Date().toLocaleString()
+    }
+  }
 }
 </script>
 
